@@ -13,8 +13,16 @@ def analyze_sentiment(text):
         return "Negative"
 
 
+def clear_text():
+    st.session_state["text"] = ""
+
+
 st.header("Sentiment Analysis")
-text = st.text_input("Enter text: ")
+text = st.text_input("Enter text: ", key="text")
+
 if st.button("Analyze", type="primary"):
     result = analyze_sentiment(text)
-    st.write(f"Result: {result}",)
+    st.button("Clear", on_click=clear_text)
+    st.write(
+        f"Result: {result}",
+    )
