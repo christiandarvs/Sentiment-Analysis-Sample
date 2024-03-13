@@ -20,7 +20,7 @@ def clear_text():
 st.header("Sentiment Analysis")
 text = st.text_input("Enter text: ", key="text")
 
-if st.button("Analyze", type="primary"):
+if st.button("Analyze", type="secondary"):
     result = analyze_sentiment(text)
     st.button("Clear", on_click=clear_text)
     st.write(
